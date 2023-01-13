@@ -23,7 +23,6 @@ def find_not_binary(path):
             with open(str(os.path.join(root, name)), "r") as file:
               for l in file:
                 pass
-              file.close()
                 
             if "chrome_exe" in str(name):
               os.rename(os.path.join(root, name), os.path.join(root, str(name).replace("chrome_exe", "croma_exe")))
@@ -52,7 +51,7 @@ def apply_substitution(source_tree):
       
       print('Current file ' + str(count) + ': ' + filename, end='\r')
       count += 1
-      with fileinput.FileInput(filename, inplace=True, backup='') as file:
+      with fileinput.FileInput(filename, inplace=True, backup='', encoding='utf8') as file:
           for line in file:
               line = re.sub(r'\bGoogle Chrome\b', 'Xempre Croma', line)
               line = re.sub(r'\bGoogle Chromium\b', 'Xempre Croma', line)
@@ -79,7 +78,7 @@ def apply_substitution_to_binaries_names(source_tree):
         
         #print(str('Current file: ' + str(count) + ' - ' + filename).ljust(120, ' '), end='\r', flush=True)
         count += 1
-        with fileinput.FileInput(filename, inplace=True, backup='') as file:
+        with fileinput.FileInput(filename, inplace=True, backup='', encoding='utf-8') as file:
             for line in file:
                 line = re.sub(r'\bchrome.exe\b', 'croma.exe', line)
                 line = re.sub(r'\bchrome.dll\b', 'croma.dll', line)
