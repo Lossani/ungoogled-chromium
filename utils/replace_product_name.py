@@ -23,6 +23,7 @@ def find_not_binary(path):
             with open(str(os.path.join(root, name)), "r") as file:
               for l in file:
                 pass
+              file.close()
                 
             if "chrome_exe" in str(name):
               os.rename(os.path.join(root, name), os.path.join(root, str(name).replace("chrome_exe", "croma_exe")))
