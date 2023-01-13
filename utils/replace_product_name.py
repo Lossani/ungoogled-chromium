@@ -51,7 +51,7 @@ def apply_substitution(source_tree):
       
       print('Current file ' + str(count) + ': ' + filename, end='\r')
       count += 1
-      with fileinput.FileInput(filename, inplace=True, backup='', encoding='utf8') as file:
+      with fileinput.FileInput(filename, inplace=True, backup='') as file:
           for line in file:
               line = re.sub(r'\bGoogle Chrome\b', 'Xempre Croma', line)
               line = re.sub(r'\bGoogle Chromium\b', 'Xempre Croma', line)
@@ -59,6 +59,7 @@ def apply_substitution(source_tree):
               line = re.sub(r'\bChrome\b', 'Croma', line)
               line = re.sub(r'\bChromiumOS\b', 'CromaOS', line)
               print(re.sub(r'\bChromeOS\b', 'CromaOS', line), end='')
+          file.close()
     print("Finished replacement")
 
 def apply_substitution_to_binaries_names(source_tree):
