@@ -77,7 +77,7 @@ def apply_substitution_to_binaries_names(source_tree):
         
         #print(str('Current file: ' + str(count) + ' - ' + filename).ljust(120, ' '), end='\r', flush=True)
         count += 1
-        with fileinput.FileInput(filename, inplace=True, backup='', encoding='utf8') as file:
+        with fileinput.FileInput(filename, inplace=True, backup='') as file:
             for line in file:
                 line = re.sub(r'\bchrome.exe\b', 'croma.exe', line)
                 line = re.sub(r'\bchrome.dll\b', 'croma.dll', line)
@@ -104,6 +104,7 @@ def apply_substitution_to_binaries_names(source_tree):
                 # line = re.sub(r'chrome_proxy.exe', 'croma_proxy.exe', line)
                 # line = re.sub(r'chrome_pwa_launcher.exe', 'croma_pwa_launcher.exe', line)
                 # print(re.sub(r'chrome_wer.dll', 'croma_wer.dll', line), end='')
+            file.close()
       except:
         pass
     print("Finished replacement")
