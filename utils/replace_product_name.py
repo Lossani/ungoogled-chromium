@@ -49,7 +49,7 @@ def apply_substitution(source_tree):
         print(str(filename) + " cannot be opened for writing! Adding write permission...")
         path.chmod(filename.stat().st_mode | stat.S_IWUSR)
       
-      print('Current file ' + str(count) + ': ' + filename, end='\r')
+      print(str('Current file ' + str(count) + ': ' + filename).ljust(160, ' '), end='\r')
       count += 1
       with fileinput.FileInput(filename, inplace=True, backup='', encoding='utf8') as file:
           for line in file:
