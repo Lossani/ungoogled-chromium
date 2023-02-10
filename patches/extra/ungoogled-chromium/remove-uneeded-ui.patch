@@ -7,6 +7,7 @@
 # link to Google's accessibility site from the settings page
 # link to Google's help site on the About page
 # external link for theme entry on settings page
+# webstore text for theme entry on settings page
 # Check passwords and managed passwords sections from the passwords page
 # the Google account line from the Payment methods page
 # Safety check section on the settings page
@@ -53,20 +54,20 @@
 -</div>
 --- a/chrome/browser/resources/history/side_bar.html
 +++ b/chrome/browser/resources/history/side_bar.html
-@@ -121,13 +121,6 @@
-           $i18n{historyMenuItem}
-           <paper-ripple></paper-ripple>
-         </a>
--        <a id="syncedTabs" role="menuitem" href="/syncedTabs"
--            class="page-item cr-nav-menu-item"
--            path="syncedTabs" on-click="onItemClick_">
--          <iron-icon icon="cr:phonelink"></iron-icon>
--          $i18n{openTabsMenuItem}
--          <paper-ripple></paper-ripple>
--        </a>
-         <!-- tabindex is needed below because <a> without href attribute is not
-              focusable in sequential keyboard navigation by default. -->
-         <a role="menuitem" id="toggle-history-clusters"
+@@ -95,13 +95,6 @@
+         $i18n{historyMenuItem}
+         <paper-ripple></paper-ripple>
+       </a>
+-      <a id="syncedTabs" role="menuitem" href="/syncedTabs"
+-          class="page-item cr-nav-menu-item"
+-          path="syncedTabs" on-click="onItemClick_">
+-        <iron-icon icon="cr:phonelink"></iron-icon>
+-        $i18n{openTabsMenuItem}
+-        <paper-ripple></paper-ripple>
+-      </a>
+       <!-- tabindex is needed below because <a> without href attribute is not
+             focusable in sequential keyboard navigation by default. -->
+       <a role="menuitem" id="toggle-history-clusters"
 --- a/chrome/browser/resources/ntp4/incognito_tab.html
 +++ b/chrome/browser/resources/ntp4/incognito_tab.html
 @@ -24,9 +24,6 @@ document.querySelector('#incognitothemec
@@ -130,6 +131,31 @@
  <if expr="not is_linux">
            <template is="dom-if" if="[[prefs.extensions.theme.id.value]]">
              <div class="separator"></div>
+--- a/chrome/browser/resources/settings/appearance_page/appearance_page.ts
++++ b/chrome/browser/resources/settings/appearance_page/appearance_page.ts
+@@ -353,8 +353,8 @@ export class SettingsAppearancePageEleme
+       return;
+     }
+ 
+-    let i18nId;
+     // <if expr="is_linux">
++    let i18nId;
+     switch (this.systemTheme_) {
+       case SystemTheme.GTK:
+         i18nId = 'gtkTheme';
+@@ -366,11 +366,8 @@ export class SettingsAppearancePageEleme
+         i18nId = 'classicTheme';
+         break;
+     }
+-    // </if>
+-    // <if expr="not is_linux">
+-    i18nId = 'chooseFromWebStore';
+-    // </if>
+     this.themeSublabel_ = this.i18n(i18nId);
++    // </if>
+   }
+ 
+   /** @return Whether applied theme is set by policy. */
 --- a/chrome/browser/resources/settings/autofill_page/passwords_section.html
 +++ b/chrome/browser/resources/settings/autofill_page/passwords_section.html
 @@ -125,6 +125,7 @@
@@ -194,21 +220,19 @@
      <!-- Signout is not supported yet on lacros, https://crbug.com/1217645 -->
      <settings-toggle-button id="signinAllowedToggle"
          class="hr"
-@@ -70,14 +70,6 @@
+@@ -59,12 +59,6 @@
      </settings-toggle-button>
  </if><!-- not chromeos -->
  </if><!-- _google_chrome -->
--    <template is="dom-if" if="[[showUrlCollectionToggle_()]]" restamp>
--      <settings-toggle-button id="urlCollectionToggle"
--          class="hr"
--          pref="{{prefs.url_keyed_anonymized_data_collection.enabled}}"
--          label="$i18n{urlKeyedAnonymizedDataCollection}"
--          sub-label="$i18n{urlKeyedAnonymizedDataCollectionDesc}">
--      </settings-toggle-button>
--    </template>
+-    <settings-toggle-button id="urlCollectionToggle"
+-        class="hr"
+-        pref="{{prefs.url_keyed_anonymized_data_collection.enabled}}"
+-        label="$i18n{urlKeyedAnonymizedDataCollection}"
+-        sub-label="$i18n{urlKeyedAnonymizedDataCollectionDesc}">
+-    </settings-toggle-button>
  <if expr="_google_chrome">
+ <if expr="not chromeos_ash">
      <settings-toggle-button id="spellCheckControl"
-         class="hr"
 --- a/chrome/browser/resources/settings/privacy_page/privacy_page.html
 +++ b/chrome/browser/resources/settings/privacy_page/privacy_page.html
 @@ -45,15 +45,6 @@
