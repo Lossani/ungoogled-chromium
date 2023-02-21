@@ -38,13 +38,12 @@ buildtools/reclient/reproxystatus
 buildtools/reclient/rewrapper
 buildtools/reclient/rpl2cloudtrace
 buildtools/reclient/rpl2trace
+buildtools/reclient/scandeps_server
 buildtools/third_party/eu-strip/bin/eu-strip
-chrome/app/etw_events/MSG00001.bin
-chrome/app/etw_events/chrome_events_winTEMP.BIN
 chrome/browser/ash/power/ml/smart_dim/20190521_example_preprocessor_config.pb
 chrome/browser/resources/chromeos/accessibility/accessibility_common/dictation/parse/pumpkin/pumpkin-3.0.tar.xz
 chrome/browser/resources/media/mei_preload/preloaded_data.pb
-chrome/build/pgo_profiles/chrome-linux-5481-1673948017-79d03f3e9866f52d3c25522313c86c9024fa649a.profdata
+chrome/build/pgo_profiles/chrome-linux-5563-1676569721-78626f27e1247bf566e429757fb35e0c4bdc5655.profdata
 chrome/chrome_cleaner/parsers/shortcut_parser/target/data/lnk_parser_fuzzer/Network Share Test.lnk
 chrome/chrome_cleaner/parsers/shortcut_parser/target/data/lnk_parser_fuzzer/New folder - Shortcut.lnk
 chrome/chrome_cleaner/parsers/shortcut_parser/target/data/lnk_parser_fuzzer/long_name.lnk
@@ -143,13 +142,7 @@ components/domain_reliability/baked_in_configs/www_google_com.json
 components/media_router/common/providers/cast/channel/fuzz_corpus/cast_message0
 components/media_router/common/providers/cast/channel/fuzz_corpus/cast_message1
 components/media_router/common/providers/cast/channel/fuzz_corpus/cast_message2
-components/safe_browsing/content/resources/empty_file_type_policy.pb
-components/safe_browsing/content/resources/real_time_url_checks_allowlist.pb
-components/safe_browsing/core/common/safe_browsing_prefs.cc
-components/safe_browsing/core/common/safe_browsing_prefs.h
 components/services/storage/test_data/legacy_dom_storage_database.localstorage
-components/signin/public/base/signin_pref_names.cc
-components/signin/public/base/signin_pref_names.h
 components/test/data/ad_tagging/allow.zip
 components/test/data/ad_tagging/bear-320x240-video-only.webm
 components/test/data/ad_tagging/disallow.zip
@@ -161,15 +154,12 @@ components/test/data/crx_file/valid_publisher.crx3
 components/test/data/crx_file/valid_test_publisher.crx3
 components/test/data/device_signals/TestApp.app/Contents/MacOS/TestApp
 components/test/data/device_signals/UnsignedApp.app/Contents/MacOS/UnsignedApp
-components/test/data/device_signals/empty.exe
-components/test/data/device_signals/metadata.exe
-components/test/data/device_signals/multi-signed.exe
-components/test/data/device_signals/signed.exe
 components/test/data/feed/response.binarypb
 components/test/data/history/HistoryNoDuration
 components/test/data/history/HistoryNoSource
 components/test/data/history/History_with_starred
 components/test/data/media_router/common/providers/cast/certificate/testsuite/testsuite1.pb
+components/test/data/omnibox/adder.tflite
 components/test/data/omnibox/on_device_head_test_model_index.bin
 components/test/data/omnibox/test_tail_model.tflite
 components/test/data/optimization_guide/bert_page_topics_model.tflite
@@ -8262,7 +8252,6 @@ third_party/boringssl/src/util/fipstools/acvp/acvptool/test/expected/HMAC-SHA2-2
 third_party/boringssl/src/util/fipstools/acvp/acvptool/test/expected/HMAC-SHA2-384.bz2
 third_party/boringssl/src/util/fipstools/acvp/acvptool/test/expected/HMAC-SHA2-512-256.bz2
 third_party/boringssl/src/util/fipstools/acvp/acvptool/test/expected/HMAC-SHA2-512.bz2
-third_party/boringssl/src/util/fipstools/acvp/acvptool/test/expected/KAS-KDF.bz2
 third_party/boringssl/src/util/fipstools/acvp/acvptool/test/expected/RSA.bz2
 third_party/boringssl/src/util/fipstools/acvp/acvptool/test/expected/SHA-1.bz2
 third_party/boringssl/src/util/fipstools/acvp/acvptool/test/expected/SHA2-224.bz2
@@ -8292,7 +8281,6 @@ third_party/boringssl/src/util/fipstools/acvp/acvptool/test/vectors/HMAC-SHA2-51
 third_party/boringssl/src/util/fipstools/acvp/acvptool/test/vectors/HMAC-SHA2-512.bz2
 third_party/boringssl/src/util/fipstools/acvp/acvptool/test/vectors/KAS-ECC-SSC.bz2
 third_party/boringssl/src/util/fipstools/acvp/acvptool/test/vectors/KAS-FFC-SSC.bz2
-third_party/boringssl/src/util/fipstools/acvp/acvptool/test/vectors/KAS-KDF.bz2
 third_party/boringssl/src/util/fipstools/acvp/acvptool/test/vectors/KDF.bz2
 third_party/boringssl/src/util/fipstools/acvp/acvptool/test/vectors/RSA.bz2
 third_party/boringssl/src/util/fipstools/acvp/acvptool/test/vectors/SHA-1.bz2
@@ -15638,8 +15626,6 @@ third_party/llvm/clang-tools-extra/clangd/test/index-serialization/Inputs/sample
 third_party/llvm/clang/test/CodeGen/Inputs/memprof.exe
 third_party/llvm/clang/test/CodeGen/Inputs/memprof.memprofraw
 third_party/llvm/clang/test/CodeGen/Inputs/thinlto-distributed-backend-skip.bc
-third_party/llvm/clang/test/Driver/Inputs/dummy-bc.bc
-third_party/llvm/clang/test/Driver/Inputs/dummy-elf.o
 third_party/llvm/clang/test/Driver/Inputs/openmp_static_device_link/lib.bc
 third_party/llvm/clang/test/Driver/at_file.c.args.utf16le
 third_party/llvm/clang/test/Misc/Inputs/serialized-diags-stable.dia
@@ -15861,7 +15847,6 @@ third_party/llvm/llvm/test/Bitcode/Inputs/invalid-array-type.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-attribute-group-entry.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-bad-abbrev-number.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-bitwidth.bc
-third_party/llvm/llvm/test/Bitcode/Inputs/invalid-call-mismatched-explicit-type.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-call-non-function-explicit-type.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-cast.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-chunk-size.bc
@@ -15883,9 +15868,7 @@ third_party/llvm/llvm/test/Bitcode/Inputs/invalid-function-argument-type.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-function-comdat-id.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-fwdref-type-mismatch-2.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-fwdref-type-mismatch.bc
-third_party/llvm/llvm/test/Bitcode/Inputs/invalid-gep-mismatched-explicit-type.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-gep-no-operands.bc
-third_party/llvm/llvm/test/Bitcode/Inputs/invalid-gep-operator-mismatched-explicit-type.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-global-var-comdat-id.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-insert-0-indices.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-inserted-value-type-mismatch.bc
@@ -15894,7 +15877,6 @@ third_party/llvm/llvm/test/Bitcode/Inputs/invalid-insertval-struct-idx.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-insertval-too-many-idxs.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-invoke-mismatched-explicit-type.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-invoke-non-function-explicit-type.bc
-third_party/llvm/llvm/test/Bitcode/Inputs/invalid-load-mismatched-explicit-type.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-load-pointer-type.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-load-ptr-type.bc
 third_party/llvm/llvm/test/Bitcode/Inputs/invalid-metadata-not-followed-named-node.bc
@@ -17104,19 +17086,6 @@ third_party/lzma_sdk/google/test_data/fake_crc_table.7z
 third_party/lzma_sdk/google/test_data/file_folder_file.7z
 third_party/lzma_sdk/google/test_data/folder.7z
 third_party/lzma_sdk/google/test_data/inner_archive.7z
-third_party/minizip/minizip_uncompress_corpus/As.zip
-third_party/minizip/minizip_uncompress_corpus/comments.zip
-third_party/minizip/minizip_uncompress_corpus/corpus.zip
-third_party/minizip/minizip_uncompress_corpus/empty.zip
-third_party/minizip/minizip_uncompress_corpus/encrypted.zip
-third_party/minizip/minizip_uncompress_corpus/encrypted_aes.zip
-third_party/minizip/minizip_uncompress_corpus/encrypted_pkcrypt.zip
-third_party/minizip/minizip_uncompress_corpus/gh.zip
-third_party/minizip/minizip_uncompress_corpus/infozip-symlinks.zip
-third_party/minizip/minizip_uncompress_corpus/permissions.zip
-third_party/minizip/minizip_uncompress_corpus/storeonly.zip
-third_party/minizip/minizip_uncompress_corpus/unsupported_permissions.zip
-third_party/minizip/minizip_uncompress_corpus/zip64.zip
 third_party/minizip/src/test/fuzz/unzip_fuzzer_seed_corpus/as.zip
 third_party/minizip/src/test/fuzz/unzip_fuzzer_seed_corpus/bzip2.zip
 third_party/minizip/src/test/fuzz/unzip_fuzzer_seed_corpus/comments.zip
@@ -18690,8 +18659,6 @@ third_party/webrtc/test/fuzzers/corpora/video_layers_allocation-corpus/vla-0
 third_party/webrtc/test/fuzzers/corpora/vp9-encoder-references-corpus/0cee4d5fd2905dc1fb2979f10a9724265b7075e2
 third_party/webrtc/test/fuzzers/corpora/vp9-encoder-references-corpus/a1c75436e1872a23391d58316d88c45da0fb7682
 third_party/webrtc/test/fuzzers/corpora/vp9-encoder-references-corpus/a8b3fb7be82395c9462684c766841d668dc0029f
-third_party/win_build_output/mc/base/trace_event/etw_manifest/MSG00001.bin
-third_party/win_build_output/mc/base/trace_event/etw_manifest/chrome_events_winTEMP.BIN
 third_party/win_build_output/mc/chrome/common/win/MSG00409.bin
 third_party/win_build_output/mc/chrome/credential_provider/eventlog/MSG00409.bin
 third_party/win_build_output/mc/remoting/host/win/MSG0000d.bin
@@ -18797,6 +18764,8 @@ third_party/zlib/google/test/data/test_posix_permissions.zip
 tools/android/elf_compression/test/testdata/lib.so
 tools/binary_size/libsupersize/testdata/mock_apk/assets/en-US.pak
 tools/binary_size/libsupersize/testdata/mock_apk/assets/resources.pak
+tools/binary_size/libsupersize/testdata/mock_dex/after/classes.dex
+tools/binary_size/libsupersize/testdata/mock_dex/before/classes.dex
 tools/clang/scripts/__pycache__/update.cpython-38.pyc
 tools/grit/grit/testdata/klonk-alternate-skeleton.rc
 tools/grit/grit/testdata/klonk.rc
