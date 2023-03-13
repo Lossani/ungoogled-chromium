@@ -43,7 +43,7 @@ buildtools/third_party/eu-strip/bin/eu-strip
 chrome/browser/ash/power/ml/smart_dim/20190521_example_preprocessor_config.pb
 chrome/browser/resources/chromeos/accessibility/accessibility_common/dictation/parse/pumpkin/pumpkin-3.0.tar.xz
 chrome/browser/resources/media/mei_preload/preloaded_data.pb
-chrome/build/pgo_profiles/chrome-linux-5563-1676569721-78626f27e1247bf566e429757fb35e0c4bdc5655.profdata
+chrome/build/pgo_profiles/chrome-linux-main-1677175176-3754d40ec3982e8ceb86346130b5ba0d06d3dbd5.profdata
 chrome/chrome_cleaner/parsers/shortcut_parser/target/data/lnk_parser_fuzzer/Network Share Test.lnk
 chrome/chrome_cleaner/parsers/shortcut_parser/target/data/lnk_parser_fuzzer/New folder - Shortcut.lnk
 chrome/chrome_cleaner/parsers/shortcut_parser/target/data/lnk_parser_fuzzer/long_name.lnk
@@ -9579,9 +9579,6 @@ third_party/depot_tools/external_bin/gsutil/gsutil_4.68/gsutil/third_party/rsa/r
 third_party/depot_tools/external_bin/gsutil/gsutil_4.68/gsutil/third_party/rsa/rsa/__pycache__/randnum.cpython-38.pyc
 third_party/depot_tools/external_bin/gsutil/gsutil_4.68/gsutil/third_party/rsa/rsa/__pycache__/transform.cpython-38.pyc
 third_party/depot_tools/external_bin/gsutil/gsutil_4.68/gsutil/third_party/six/__pycache__/six.cpython-38.pyc
-third_party/depot_tools/ninja-linux64
-third_party/depot_tools/ninja-mac
-third_party/depot_tools/ninja.exe
 third_party/devtools-frontend/src/node_modules/tar-fs/test/fixtures/invalid.tar
 third_party/devtools-frontend/src/node_modules/terser/node_modules/source-map/lib/mappings.wasm
 third_party/devtools-frontend/src/test/e2e/resources/media/corrupt.webm
@@ -9599,15 +9596,6 @@ third_party/devtools-frontend/src/test/e2e/resources/sources/wasm/syntax-highlig
 third_party/devtools-frontend/src/test/e2e/resources/sources/wasm/unreachable.wasm
 third_party/devtools-frontend/src/test/e2e/resources/sources/wasm/unreachable_with_dwarf.wasm
 third_party/devtools-frontend/src/test/e2e/resources/sources/wasm/wasm-with-sourcemap.wasm
-third_party/devtools-frontend/src/test/screenshots/image_diff/linux/image_diff
-third_party/devtools-frontend/src/test/screenshots/image_diff/linux/libbase.so
-third_party/devtools-frontend/src/test/screenshots/image_diff/linux/libboringssl.so
-third_party/devtools-frontend/src/test/screenshots/image_diff/linux/libc++.so
-third_party/devtools-frontend/src/test/screenshots/image_diff/linux/libchrome_zlib.so
-third_party/devtools-frontend/src/test/screenshots/image_diff/mac/image_diff
-third_party/devtools-frontend/src/test/screenshots/image_diff/mac/libbase.dylib
-third_party/devtools-frontend/src/test/screenshots/image_diff/mac/libc++.dylib
-third_party/devtools-frontend/src/test/screenshots/image_diff/mac/libchrome_zlib.dylib
 third_party/devtools-frontend/src/test/unittests/fixtures/traces/animation.json.gz
 third_party/devtools-frontend/src/test/unittests/fixtures/traces/basic.json.gz
 third_party/devtools-frontend/src/test/unittests/fixtures/traces/cls-cluster-max-duration.json.gz
@@ -17226,7 +17214,6 @@ third_party/nasm/travis/test/xcrypt.bin.t
 third_party/nasm/travis/test/zerobyte.bin.t
 third_party/ninja/ninja
 third_party/node/node_modules.tar.gz
-third_party/node/node_modules/terser/node_modules/source-map/lib/mappings.wasm
 third_party/openh264/src/autotest/performanceTest/ios/fruitstrap
 third_party/openh264/src/autotest/performanceTest/ios/iFileTransfer
 third_party/openh264/src/res/Adobe_PDF_sample_a_1024x768_50Frms.264

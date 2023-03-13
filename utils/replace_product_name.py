@@ -51,7 +51,7 @@ def apply_substitution(source_tree):
       
       SOURCE_PREFIX = "build\\src\\"
       STR_START_POSITION = filename.find(SOURCE_PREFIX) + len(SOURCE_PREFIX)
-      print(str('Current file ' + str(count) + ': ' + filename[STR_START_POSITION:]), flush = True, end = '\r')
+      print(str('[' + str(count) + '/' + str(len(files_to_replace)) + '] ' + filename[STR_START_POSITION:]), flush = True, end = '\r')
       count += 1
       with fileinput.FileInput(filename, inplace=True, backup='', encoding='utf8') as file:
           for line in file:
