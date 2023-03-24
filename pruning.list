@@ -43,7 +43,6 @@ buildtools/third_party/eu-strip/bin/eu-strip
 chrome/browser/ash/power/ml/smart_dim/20190521_example_preprocessor_config.pb
 chrome/browser/resources/chromeos/accessibility/accessibility_common/dictation/parse/pumpkin/pumpkin-3.0.tar.xz
 chrome/browser/resources/media/mei_preload/preloaded_data.pb
-chrome/build/pgo_profiles/chrome-linux-main-1677175176-3754d40ec3982e8ceb86346130b5ba0d06d3dbd5.profdata
 chrome/chrome_cleaner/parsers/shortcut_parser/target/data/lnk_parser_fuzzer/Network Share Test.lnk
 chrome/chrome_cleaner/parsers/shortcut_parser/target/data/lnk_parser_fuzzer/New folder - Shortcut.lnk
 chrome/chrome_cleaner/parsers/shortcut_parser/target/data/lnk_parser_fuzzer/long_name.lnk
