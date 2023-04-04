@@ -172,34 +172,7 @@
        precompiled_header_type = "msvc"
 --- a/build/win/message_compiler.py
 +++ b/build/win/message_compiler.py
-@@ -119,24 +119,6 @@ def main():
-         header_contents += sorted(define_block, key=lambda s: s.split()[-1])
-       with open(header_file, 'wb') as f:
-         f.write(''.join(header_contents))
--
--    # mc.exe invocation and post-processing are complete, now compare the output
--    # in tmp_dir to the checked-in outputs.
--    diff = filecmp.dircmp(tmp_dir, source)
--    if diff.diff_files or set(diff.left_list) != set(diff.right_list):
--      print('mc.exe output different from files in %s, see %s' % (source,
--                                                                  tmp_dir))
--      diff.report()
--      for f in diff.diff_files:
--        if f.endswith('.bin'): continue
--        fromfile = os.path.join(source, f)
--        tofile = os.path.join(tmp_dir, f)
--        print(''.join(
--            difflib.unified_diff(
--                open(fromfile, 'U').readlines(),
--                open(tofile, 'U').readlines(), fromfile, tofile)))
--      delete_tmp_dir = False
--      sys.exit(1)
-   except subprocess.CalledProcessError as e:
-     print(e.output)
-     sys.exit(e.returncode)
---- a/chrome/BUILD.gn
-+++ b/chrome/BUILD.gn
-@@ -71,29 +71,6 @@ if (is_win && enable_resource_allowlist_generation) {
+@@ -72,29 +72,6 @@ if (is_win && enable_resource_allowlist_generation) {
    _chrome_resource_allowlist = "$target_gen_dir/chrome_resource_allowlist.txt"
  }
  
@@ -229,7 +202,7 @@
  # This does not currently work. See crbug.com/1311822.
  # This target exists above chrome and it's main components in the dependency
  # tree as a central place to put assert_no_deps annotations. Since this depends
-@@ -131,20 +108,12 @@ if (!is_android && !is_mac) {
+@@ -132,10 +109,6 @@ if (!is_android && !is_mac) {
      # Windows-only deps are OK because chrome_initial uses initialexe/chrome as
      # the output name for that platform.
      # See crbug.com/1146571.
@@ -239,27 +212,29 @@
 -    }
    }
  
-   executable("chrome_initial") {
-     configs -= [ "//build/config/compiler:thinlto_optimize_default" ]
-     configs += [ "//build/config/compiler:thinlto_optimize_max" ]
--    if (is_win) {
--      output_name = "initialexe/chrome"
--    } else {
--      output_name = "chrome"
--    }
-+    output_name = "chrome"
+   template("_chrome_exe") {
+@@ -147,11 +120,7 @@ if (!is_android && !is_mac) {
+     target(_type, target_name) {
+       configs -= [ "//build/config/compiler:thinlto_optimize_default" ]
+       configs += [ "//build/config/compiler:thinlto_optimize_max" ]
+-      if (is_win) {
+-        output_name = "initialexe/chrome"
+-      } else {
+-        output_name = "chrome"
+-      }
++      output_name = "chrome"
  
-     # Because the sources list varies so significantly per-platform, generally
-     # each platform lists its own files rather than relying on filtering or
-@@ -344,7 +344,6 @@ if (!is_android && !is_mac) {
-     }
+       # Because the sources list varies so significantly per-platform, generally
+       # each platform lists its own files rather than relying on filtering or
+@@ -382,7 +351,6 @@ if (!is_android && !is_mac) {
+       }
  
-     data_deps += [
--      "//chrome/browser/resources/media/mei_preload:component",
-       "//third_party/widevine/cdm",
-     ]
-   }
-@@ -1167,7 +1166,6 @@ if (is_win) {
+       data_deps += [
+-        "//chrome/browser/resources/media/mei_preload:component",
+         "//third_party/widevine/cdm",
+       ]
+       if (invoker.collect_inputs_only) {
+@@ -1224,7 +1192,6 @@ if (is_win) {
        ":optimization_guide_library",
        ":swiftshader_library",
        ":widevine_cdm_library",
@@ -423,15 +398,15 @@
      "//third_party/widevine/cdm:headers",
 --- a/chrome/browser/about_flags.cc
 +++ b/chrome/browser/about_flags.cc
-@@ -157,6 +157,7 @@
- #include "components/translate/core/browser/translate_ranker_impl.h"
- #include "components/translate/core/common/translate_util.h"
- #include "components/ui_devtools/switches.h"
+@@ -14,6 +14,7 @@
+ #include <utility>
+ 
+ #include "base/base_switches.h"
 +#include "components/croma/croma_switches.h"
- #include "components/version_info/version_info.h"
- #include "components/viz/common/features.h"
- #include "components/viz/common/switches.h"
-@@ -3319,7 +3320,13 @@ const FeatureEntry::FeatureVariation
+ #include "base/command_line.h"
+ #include "base/feature_list.h"
+ #include "base/functional/bind.h"
+@@ -3454,7 +3455,13 @@ const FeatureEntry::FeatureVariation kVcSegmentationModelVariations[] = {
  // calculate and verify checksum.
  //
  // When adding a new choice, add it to the end of the list.
@@ -1125,7 +1100,7 @@
  }  // namespace media_router
 --- a/chrome/browser/media/webrtc/webrtc_log_uploader.cc
 +++ b/chrome/browser/media/webrtc/webrtc_log_uploader.cc
-@@ -126,28 +126,11 @@ void WebRtcLogUploader::LoggingStoppedDoUpload(
+@@ -127,35 +127,10 @@ void WebRtcLogUploader::OnLoggingStopped(
    DCHECK(meta_data.get());
    DCHECK(!upload_done_data.paths.directory.empty());
  
@@ -1135,7 +1110,7 @@
 -
    if (base::PathExists(upload_done_data.paths.directory)) {
      webrtc_logging::DeleteOldWebRtcLogFiles(upload_done_data.paths.directory);
--
+ 
 -    local_log_id = base::NumberToString(base::Time::Now().ToDoubleT());
 -    base::FilePath log_file_path =
 -        upload_done_data.paths.directory.AppendASCII(local_log_id)
@@ -1146,16 +1121,23 @@
 -        webrtc_logging::TextLogList::GetWebRtcLogListFileForDirectory(
 -            upload_done_data.paths.directory);
 -    AddLocallyStoredLogInfoToUploadListFile(log_list_path, local_log_id);
-   }
- 
+-  }
+-
 -  upload_done_data.local_log_id = local_log_id;
--  PrepareMultipartPostData(compressed_log, std::move(meta_data),
--                           std::move(upload_done_data));
-+  NotifyUploadDoneAndLogStats(net::HTTP_OK, net::OK, "", std::move(upload_done_data));
+-
+-  if (is_text_log_upload_allowed) {
+-    PrepareMultipartPostData(compressed_log, std::move(meta_data),
+-                             std::move(upload_done_data));
+-  } else {
+-    main_task_runner_->PostTask(
+-        FROM_HERE,
+-        base::BindOnce(&WebRtcLogUploader::NotifyUploadDisabled,
+-                       base::Unretained(this), std::move(upload_done_data)));
++    NotifyUploadDoneAndLogStats(net::HTTP_OK, net::OK, "", std::move(upload_done_data));
+   }
  }
  
- void WebRtcLogUploader::PrepareMultipartPostData(
-@@ -158,28 +141,7 @@ void WebRtcLogUploader::PrepareMultipartPostData(
+@@ -167,28 +142,7 @@ void WebRtcLogUploader::PrepareMultipartPostData(
    DCHECK(!compressed_log.empty());
    DCHECK(meta_data.get());
  
@@ -1185,7 +1167,7 @@
  }
  
  void WebRtcLogUploader::UploadStoredLog(
-@@ -245,50 +207,6 @@ void WebRtcLogUploader::LoggingStoppedDoStore(
+@@ -254,50 +208,6 @@ void WebRtcLogUploader::LoggingStoppedDoStore(
    DCHECK(log_buffer.get());
    DCHECK(!log_paths.directory.empty());
  
