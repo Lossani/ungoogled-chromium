@@ -2851,16 +2851,16 @@ index 442511f..d12c2b7 100644
  #include "base/functional/callback_helpers.h"
  #include "base/logging.h"
  #include "base/memory/memory_pressure_listener.h"
-@@ -1163,7 +1164,8 @@ void HistoryBackend::InitImpl(
+@@ -1187,7 +1188,8 @@ void HistoryBackend::InitImpl(
    db_->GetStartDate(&first_recorded_time_);
  
    // Start expiring old stuff.
 -  expirer_.StartExpiringOldStuff(base::Days(kExpireDaysThreshold));
 +  if (!base::CommandLine::ForCurrentProcess()->HasSwitch("keep-old-history"))
 +    expirer_.StartExpiringOldStuff(base::Days(kExpireDaysThreshold));
- 
-   LOCAL_HISTOGRAM_TIMES("History.InitTime", TimeTicks::Now() - beginning_time);
  }
+ 
+ void HistoryBackend::OnMemoryPressure(
 --- a/components/javascript_dialogs/app_modal_dialog_manager.cc
 +++ b/components/javascript_dialogs/app_modal_dialog_manager.cc
 @@ -8,6 +8,7 @@
