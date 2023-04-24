@@ -17011,7 +17011,6 @@ third_party/pywebsocket3/src/test/cert/client_cert.p12
 third_party/quic_trace/src/examples/example.json.gz
 third_party/quic_trace/src/examples/example.qtr
 third_party/r8/custom_d8.jar
-third_party/rust/libloading/v0_7/crate/tests/nagisa32.dll
 third_party/rust/regex/v1/crate/src/testdata/basic.dat
 third_party/rust/regex/v1/crate/tests/fowler.rs
 third_party/rust/unicode_ident/v1/crate/tests/fst/xid_continue.fst
