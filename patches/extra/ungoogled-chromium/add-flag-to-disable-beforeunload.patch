@@ -4,23 +4,23 @@
 +++ b/chrome/browser/ungoogled_flag_entries.h
 @@ -16,4 +16,8 @@
       "Disable search engine collection",
-      "Prevents search engines from being added automatically. Croma flag.",
+      "Prevents search engines from being added automatically. ungoogled-chromium flag.",
       kOsAll, SINGLE_VALUE_TYPE("disable-search-engine-collection")},
 +    {"disable-beforeunload",
 +     "Disable beforeunload",
-+     "Disables JavaScript dialog boxes triggered by beforeunload. Croma flag.",
++     "Disables JavaScript dialog boxes triggered by beforeunload. ungoogled-chromium flag.",
 +     kOsAll, SINGLE_VALUE_TYPE("disable-beforeunload")},
  #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
 --- a/components/javascript_dialogs/app_modal_dialog_manager.cc
 +++ b/components/javascript_dialogs/app_modal_dialog_manager.cc
-@@ -8,6 +8,7 @@
+@@ -7,6 +7,7 @@
+ #include <algorithm>
  #include <utility>
  
- #include "base/bind.h"
 +#include "base/command_line.h"
+ #include "base/functional/bind.h"
  #include "base/i18n/rtl.h"
  #include "base/metrics/histogram_macros.h"
- #include "base/strings/utf_string_conversions.h"
 @@ -196,7 +197,8 @@ void AppModalDialogManager::RunBeforeUnl
    ChromeJavaScriptDialogExtraData* extra_data =
        &javascript_dialog_extra_data_[web_contents];

@@ -2,17 +2,17 @@
 +++ b/chrome/browser/ungoogled_flag_entries.h
 @@ -108,4 +108,8 @@
       "Hide SidePanel Button",
-      "Hides the SidePanel Button. Croma flag.",
+      "Hides the SidePanel Button. ungoogled-chromium flag.",
       kOsDesktop, SINGLE_VALUE_TYPE("hide-sidepanel-button")},
 +    {"disable-link-drag",
 +     "Disable link drag",
-+     "Prevents dragging of links and selected text. Croma flag.",
++     "Prevents dragging of links and selected text. ungoogled-chromium flag.",
 +     kOsDesktop, FEATURE_VALUE_TYPE(blink::features::kDisableLinkDrag)},
  #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
 --- a/third_party/blink/common/features.cc
 +++ b/third_party/blink/common/features.cc
-@@ -31,6 +31,8 @@ BASE_FEATURE(kAttributionReportingCrossA
-              "AttributionReportingCrossAppWeb",
+@@ -39,6 +39,8 @@ BASE_FEATURE(kAutofillDetectRemovedFormC
+              "AutofillDetectRemovedFormControls",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
 +BASE_FEATURE(kDisableLinkDrag, "DisableLinkDrag", base::FEATURE_DISABLED_BY_DEFAULT);
@@ -30,10 +30,10 @@
 +
  BLINK_COMMON_EXPORT BASE_DECLARE_FEATURE(kAnonymousIframeOriginTrial);
  BLINK_COMMON_EXPORT BASE_DECLARE_FEATURE(kAttributionReportingCrossAppWeb);
- BLINK_COMMON_EXPORT BASE_DECLARE_FEATURE(kAutomaticLazyFrameLoadingToAds);
+ BLINK_COMMON_EXPORT
 --- a/third_party/blink/renderer/core/editing/selection_controller.cc
 +++ b/third_party/blink/renderer/core/editing/selection_controller.cc
-@@ -1325,10 +1325,14 @@ FrameSelection& SelectionController::Sel
+@@ -1396,10 +1396,14 @@ FrameSelection& SelectionController::Sel
  }
  
  bool IsSelectionOverLink(const MouseEventWithHitTestResults& event) {
@@ -50,7 +50,7 @@
    Node* inner_node = event.InnerNode();
 --- a/third_party/blink/renderer/core/input/mouse_event_manager.cc
 +++ b/third_party/blink/renderer/core/input/mouse_event_manager.cc
-@@ -663,8 +663,14 @@ WebInputEventResult MouseEventManager::H
+@@ -651,8 +651,14 @@ WebInputEventResult MouseEventManager::H
  
    bool single_click = event.Event().click_count <= 1;
  

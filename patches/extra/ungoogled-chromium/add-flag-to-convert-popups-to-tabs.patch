@@ -4,16 +4,16 @@
 +++ b/chrome/browser/ungoogled_flag_entries.h
 @@ -48,4 +48,8 @@
       "Close window with last tab",
-      "Determines whether a window should close once the last tab is closed. Croma flag.",
+      "Determines whether a window should close once the last tab is closed. ungoogled-chromium flag.",
       kOsDesktop, MULTI_VALUE_TYPE(kCloseWindowWithLastTab)},
 +    {"popups-to-tabs",
 +     "Popups to tabs",
-+     "Makes popups open in new tabs. Croma flag",
++     "Makes popups open in new tabs. ungoogled-chromium flag",
 +     kOsAll, SINGLE_VALUE_TYPE("popups-to-tabs")},
  #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
 --- a/content/renderer/render_frame_impl.cc
 +++ b/content/renderer/render_frame_impl.cc
-@@ -1158,6 +1158,8 @@ WindowOpenDisposition NavigationPolicyTo
+@@ -1162,6 +1162,8 @@ WindowOpenDisposition NavigationPolicyTo
      case blink::kWebNavigationPolicyNewWindow:
        return WindowOpenDisposition::NEW_WINDOW;
      case blink::kWebNavigationPolicyNewPopup:

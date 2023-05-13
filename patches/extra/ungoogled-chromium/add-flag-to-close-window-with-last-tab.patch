@@ -8,7 +8,7 @@
  #include "base/containers/adapters.h"
  #include "base/containers/contains.h"
  #include "base/containers/flat_map.h"
-@@ -1829,6 +1830,10 @@ bool TabStripModel::CloseTabs(base::span
+@@ -1834,6 +1835,10 @@ bool TabStripModel::CloseTabs(base::span
    if (items.empty())
      return true;
  
@@ -36,10 +36,10 @@
 +++ b/chrome/browser/ungoogled_flag_entries.h
 @@ -44,4 +44,8 @@
       "Omnibox Autocomplete Filtering",
-      "Restrict omnibox autocomplete results to a combination of search suggestions (if enabled), bookmarks, and internal chrome pages. Croma flag.",
+      "Restrict omnibox autocomplete results to a combination of search suggestions (if enabled), bookmarks, and internal chrome pages. ungoogled-chromium flag.",
       kOsAll, MULTI_VALUE_TYPE(kOmniboxAutocompleteFiltering)},
 +    {"close-window-with-last-tab",
 +     "Close window with last tab",
-+     "Determines whether a window should close once the last tab is closed. Croma flag.",
++     "Determines whether a window should close once the last tab is closed. ungoogled-chromium flag.",
 +     kOsDesktop, MULTI_VALUE_TYPE(kCloseWindowWithLastTab)},
  #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
