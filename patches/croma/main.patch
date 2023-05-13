@@ -555,14 +555,14 @@ index 442511f..d12c2b7 100644
  
 --- a/chrome/browser/browsing_data/chrome_browsing_data_lifetime_manager.cc
 +++ b/chrome/browser/browsing_data/chrome_browsing_data_lifetime_manager.cc
-@@ -25,6 +25,7 @@
+@@ -23,6 +23,7 @@
+ #include "chrome/browser/browsing_data/chrome_browsing_data_remover_delegate.h"
+ #include "chrome/browser/lifetime/browser_shutdown.h"
  #include "chrome/browser/profiles/profile.h"
- #include "chrome/browser/profiles/profile_manager.h"
- #include "chrome/browser/sync/sync_service_factory.h"
 +#include "components/browsing_data/core/features.h"
+ #include "chrome/browser/sync/sync_service_factory.h"
+ #include "components/browsing_data/core/browsing_data_policies_utils.h"
  #include "components/browsing_data/core/pref_names.h"
- #include "components/keep_alive_registry/keep_alive_types.h"
- #include "components/keep_alive_registry/scoped_keep_alive.h"
 @@ -157,6 +158,21 @@ class BrowsingDataRemoverObserver
  #endif
  };
@@ -585,7 +585,7 @@ index 442511f..d12c2b7 100644
  uint64_t GetOriginTypeMask(const base::Value::List& data_types) {
    uint64_t result = 0;
    for (const auto& data_type : data_types) {
-@@ -305,7 +321,8 @@ void ChromeBrowsingDataLifetimeManager::ClearBrowsingDataForOnExitPolicy(
+@@ -288,7 +304,8 @@ void ChromeBrowsingDataLifetimeManager::ClearBrowsingDataForOnExitPolicy(
      bool keep_browser_alive) {
    const base::Value::List& data_types = profile_->GetPrefs()->GetList(
        browsing_data::prefs::kClearBrowsingDataOnExitList);
@@ -595,7 +595,7 @@ index 442511f..d12c2b7 100644
      profile_->GetPrefs()->SetBoolean(
          browsing_data::prefs::kClearBrowsingDataOnExitDeletionPending, true);
      auto* remover = profile_->GetBrowsingDataRemover();
-@@ -316,8 +333,8 @@ void ChromeBrowsingDataLifetimeManager::ClearBrowsingDataForOnExitPolicy(
+@@ -299,8 +316,8 @@ void ChromeBrowsingDataLifetimeManager::ClearBrowsingDataForOnExitPolicy(
        DCHECK(keep_browser_alive);
  #endif
      remover->RemoveAndReply(base::Time(), base::Time::Max(),
@@ -2712,10 +2712,11 @@ index 442511f..d12c2b7 100644
               base::FEATURE_ENABLED_BY_DEFAULT);
 --- a/components/browsing_data/core/features.h
 +++ b/components/browsing_data/core/features.h
-@@ -13,6 +13,7 @@ namespace browsing_data::features {
- // defined by the BrowsingDataLifetime policy.
- BASE_DECLARE_FEATURE(kEnableBrowsingDataLifetimeManager);
- 
+@@ -21,6 +21,8 @@ BASE_DECLARE_FEATURE(kDeprecateCookiesTreeModel);
+ // SyncDisabled by simply disabled sync for the browsing data that is set to be
+ // deleted by policy.
+ BASE_DECLARE_FEATURE(kDataRetentionPoliciesDisableSyncTypesNeeded);
++
 +BASE_DECLARE_FEATURE(kClearDataOnExit);
  }  // namespace browsing_data::features
  
