@@ -1,30 +1,30 @@
-# Add ungoogled-chromium-specific code to components/ungoogled/
+# Add croma-specific code to components/croma/
 
 --- /dev/null
-+++ b/components/ungoogled/BUILD.gn
++++ b/components/croma/BUILD.gn
 @@ -0,0 +1,14 @@
-+# Copyright (c) 2020 The ungoogled-chromium Authors. All rights reserved.
++# Copyright (c) 2020 The croma Authors. All rights reserved.
 +# Use of this source code is governed by a BSD-style license that can be
 +# found in the LICENSE file.
 +
-+component("ungoogled_switches") {
++component("croma_switches") {
 +  sources = [
-+    "ungoogled_switches.h",
-+    "ungoogled_switches.cc",
++    "croma_switches.h",
++    "croma_switches.cc",
 +  ]
 +
-+  defines = [ "IS_UNGOOGLED_IMPL" ]
++  defines = [ "IS_CROMA_IMPL" ]
 +
 +  deps = [ "//base" ]
 +}
 --- /dev/null
-+++ b/components/ungoogled/ungoogled_switches.cc
++++ b/components/croma/croma_switches.cc
 @@ -0,0 +1,18 @@
-+// Copyright (c) 2020 The ungoogled-chromium Authors. All rights reserved.
++// Copyright (c) 2020 The croma Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
-+#include "components/ungoogled/ungoogled_switches.h"
++#include "components/croma/croma_switches.h"
 +
 +namespace switches {
 +
@@ -39,25 +39,25 @@
 +
 +}  // namespace switches
 --- /dev/null
-+++ b/components/ungoogled/ungoogled_switches.h
++++ b/components/croma/croma_switches.h
 @@ -0,0 +1,20 @@
-+// Copyright (c) 2020 The ungoogled-chromium Authors. All rights reserved.
++// Copyright (c) 2020 The croma Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
 +// Defines all the fingerprinting command-line switches.
 +
-+#ifndef THIRD_PARTY_UNGOOGLED_FINGERPRINTING_SWITCHES_H_
-+#define THIRD_PARTY_UNGOOGLED_FINGERPRINTING_SWITCHES_H_
++#ifndef THIRD_PARTY_CROMA_FINGERPRINTING_SWITCHES_H_
++#define THIRD_PARTY_CROMA_FINGERPRINTING_SWITCHES_H_
 +
 +#include "base/component_export.h"
 +
 +namespace switches {
 +
-+COMPONENT_EXPORT(UNGOOGLED) extern const char kFingerprintingClientRectsNoise[];
-+COMPONENT_EXPORT(UNGOOGLED) extern const char kFingerprintingCanvasMeasureTextNoise[];
-+COMPONENT_EXPORT(UNGOOGLED) extern const char kFingerprintingCanvasImageDataNoise[];
++COMPONENT_EXPORT(CROMA) extern const char kFingerprintingClientRectsNoise[];
++COMPONENT_EXPORT(CROMA) extern const char kFingerprintingCanvasMeasureTextNoise[];
++COMPONENT_EXPORT(CROMA) extern const char kFingerprintingCanvasImageDataNoise[];
 +
 +}
 +
-+#endif  // THIRD_PARTY_UNGOOGLED_FINGERPRINTING_SWITCHES_H_
++#endif  // THIRD_PARTY_CROMA_FINGERPRINTING_SWITCHES_H_

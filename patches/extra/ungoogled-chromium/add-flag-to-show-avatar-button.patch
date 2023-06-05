@@ -18,8 +18,8 @@
    avatar_->SetVisible(show_avatar_toolbar_button);
  
    auto app_menu_button = std::make_unique<BrowserAppMenuButton>(this);
---- a/chrome/browser/ungoogled_flag_choices.h
-+++ b/chrome/browser/ungoogled_flag_choices.h
+--- a/chrome/browser/croma_flag_choices.h
++++ b/chrome/browser/croma_flag_choices.h
 @@ -13,4 +13,16 @@ const FeatureEntry::Choice kExtensionHan
       "extension-mime-request-handling",
       "always-prompt-for-install"},
@@ -36,15 +36,15 @@
 +     "show-avatar-button",
 +     "never"}
 +};
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_CHOICES_H_
---- a/chrome/browser/ungoogled_flag_entries.h
-+++ b/chrome/browser/ungoogled_flag_entries.h
+ #endif  // CHROME_BROWSER_CROMA_FLAG_CHOICES_H_
+--- a/chrome/browser/croma_flag_entries.h
++++ b/chrome/browser/croma_flag_entries.h
 @@ -24,4 +24,8 @@
       "Force punycode hostnames",
-      "Force punycode in hostnames instead of Unicode when displaying Internationalized Domain Names (IDNs). ungoogled-chromium flag.",
+      "Force punycode in hostnames instead of Unicode when displaying Internationalized Domain Names (IDNs). croma flag.",
       kOsAll, SINGLE_VALUE_TYPE("force-punycode-hostnames")},
 +    {"show-avatar-button",
 +     "Show avatar/people/profile button",
-+     "Show avatar/people/profile button in the browser toolbar. ungoogled-chromium flag.",
++     "Show avatar/people/profile button in the browser toolbar. croma flag.",
 +     kOsDesktop, MULTI_VALUE_TYPE(kShowAvatarButtonChoices)},
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
+ #endif  // CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_

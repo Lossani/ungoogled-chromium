@@ -36,8 +36,8 @@
    tab_container_->UpdateHoverCard(tab, update_type);
  }
  
---- a/chrome/browser/ungoogled_flag_choices.h
-+++ b/chrome/browser/ungoogled_flag_choices.h
+--- a/chrome/browser/croma_flag_choices.h
++++ b/chrome/browser/croma_flag_choices.h
 @@ -70,4 +70,13 @@ const FeatureEntry::Choice kCloseConfirm
       "close-confirmation",
       "multiple"},
@@ -51,15 +51,15 @@
 +     "tab-hover-cards",
 +     "tooltip"},
 +};
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_CHOICES_H_
---- a/chrome/browser/ungoogled_flag_entries.h
-+++ b/chrome/browser/ungoogled_flag_entries.h
+ #endif  // CHROME_BROWSER_CROMA_FLAG_CHOICES_H_
+--- a/chrome/browser/croma_flag_entries.h
++++ b/chrome/browser/croma_flag_entries.h
 @@ -80,4 +80,8 @@
       "Custom New Tab Page",
-      "Allows setting a custom URL for the new tab page. Value can be internal (e.g. `about:blank`), external (e.g. `example.com`), or local (e.g. `file:///tmp/startpage.html`). This applies for incognito windows as well when not set to a `chrome://` internal page. ungoogled-chromium flag",
+      "Allows setting a custom URL for the new tab page. Value can be internal (e.g. `about:blank`), external (e.g. `example.com`), or local (e.g. `file:///tmp/startpage.html`). This applies for incognito windows as well when not set to a `chrome://` internal page. croma flag",
       kOsDesktop, ORIGIN_LIST_VALUE_TYPE("custom-ntp", "")},
 +    {"tab-hover-cards",
 +     "Tab Hover Cards",
-+     "Allows removing the tab hover cards or using a tooltip as a replacement. ungoogled-chromium flag.",
++     "Allows removing the tab hover cards or using a tooltip as a replacement. croma flag.",
 +     kOsDesktop, MULTI_VALUE_TYPE(kTabHoverCards)},
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
+ #endif  // CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_

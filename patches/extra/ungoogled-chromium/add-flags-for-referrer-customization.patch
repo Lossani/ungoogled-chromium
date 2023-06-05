@@ -1,22 +1,22 @@
---- a/chrome/browser/ungoogled_flag_entries.h
-+++ b/chrome/browser/ungoogled_flag_entries.h
+--- a/chrome/browser/croma_flag_entries.h
++++ b/chrome/browser/croma_flag_entries.h
 @@ -120,4 +120,16 @@
       "Enable themes in Incognito mode",
-      "Allows themes to override Google's built-in Incognito theming. ungoogled-chromium flag.",
+      "Allows themes to override Google's built-in Incognito theming. croma flag.",
       kOsDesktop, SINGLE_VALUE_TYPE("enable-incognito-themes")},
 +    {"remove-referrers",
 +     "Remove Referrers",
-+     "Removes all referrers. ungoogled-chromium flag.",
++     "Removes all referrers. croma flag.",
 +     kOsAll, FEATURE_VALUE_TYPE(features::kNoReferrers)},
 +    {"remove-cross-origin-referrers",
 +     "Remove Cross-Origin Referrers",
-+     "Removes all cross-origin referrers. Has lower precedence than remove-referrers. ungoogled-chromium flag.",
++     "Removes all cross-origin referrers. Has lower precedence than remove-referrers. croma flag.",
 +     kOsAll, FEATURE_VALUE_TYPE(features::kNoCrossOriginReferrers)},
 +    {"minimal-referrers",
 +     "Minimal Referrers",
-+     "Removes all cross-origin referrers and strips same-origin referrers down to the origin. Has lower precedence than remove-cross-origin-referrers. ungoogled-chromium flag.",
++     "Removes all cross-origin referrers and strips same-origin referrers down to the origin. Has lower precedence than remove-cross-origin-referrers. croma flag.",
 +     kOsAll, FEATURE_VALUE_TYPE(features::kMinimalReferrers)},
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
+ #endif  // CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_
 --- a/chrome/common/BUILD.gn
 +++ b/chrome/common/BUILD.gn
 @@ -143,6 +143,8 @@ static_library("common_lib") {
@@ -69,7 +69,7 @@
 --- /dev/null
 +++ b/chrome/common/referrer_sanitizer.cc
 @@ -0,0 +1,48 @@
-+// Copyright 2023 The ungoogled-chromium Authors
++// Copyright 2023 The croma Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -120,7 +120,7 @@
 --- /dev/null
 +++ b/chrome/common/referrer_sanitizer.h
 @@ -0,0 +1,30 @@
-+// Copyright 2023 The ungoogled-chromium Authors
++// Copyright 2023 The croma Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +

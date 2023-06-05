@@ -1,16 +1,16 @@
 # Add flag to disable automatic search engine collection
 
---- a/chrome/browser/ungoogled_flag_entries.h
-+++ b/chrome/browser/ungoogled_flag_entries.h
+--- a/chrome/browser/croma_flag_entries.h
++++ b/chrome/browser/croma_flag_entries.h
 @@ -12,4 +12,8 @@
       "Handling of extension MIME type requests",
-      "Used when deciding how to handle a request for a CRX or User Script MIME type. ungoogled-chromium flag.",
+      "Used when deciding how to handle a request for a CRX or User Script MIME type. croma flag.",
       kOsAll, MULTI_VALUE_TYPE(kExtensionHandlingChoices)},
 +    {"disable-search-engine-collection",
 +     "Disable search engine collection",
-+     "Prevents search engines from being added automatically. ungoogled-chromium flag.",
++     "Prevents search engines from being added automatically. croma flag.",
 +     kOsAll, SINGLE_VALUE_TYPE("disable-search-engine-collection")},
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
+ #endif  // CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_
 --- a/chrome/renderer/chrome_render_frame_observer.cc
 +++ b/chrome/renderer/chrome_render_frame_observer.cc
 @@ -253,14 +253,16 @@ void ChromeRenderFrameObserver::DidFinis

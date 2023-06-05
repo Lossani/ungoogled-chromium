@@ -19,8 +19,8 @@
    const bool closing_all = static_cast<int>(items.size()) == count();
    base::WeakPtr<TabStripModel> ref = weak_factory_.GetWeakPtr();
    if (closing_all) {
---- a/chrome/browser/ungoogled_flag_choices.h
-+++ b/chrome/browser/ungoogled_flag_choices.h
+--- a/chrome/browser/croma_flag_choices.h
++++ b/chrome/browser/croma_flag_choices.h
 @@ -55,4 +55,10 @@ const FeatureEntry::Choice kOmniboxAutoc
       "omnibox-autocomplete-filtering",
       "search-bookmarks-chrome"},
@@ -31,15 +31,15 @@
 +     "close-window-with-last-tab",
 +     "never"},
 +};
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_CHOICES_H_
---- a/chrome/browser/ungoogled_flag_entries.h
-+++ b/chrome/browser/ungoogled_flag_entries.h
+ #endif  // CHROME_BROWSER_CROMA_FLAG_CHOICES_H_
+--- a/chrome/browser/croma_flag_entries.h
++++ b/chrome/browser/croma_flag_entries.h
 @@ -44,4 +44,8 @@
       "Omnibox Autocomplete Filtering",
-      "Restrict omnibox autocomplete results to a combination of search suggestions (if enabled), bookmarks, and internal chrome pages. ungoogled-chromium flag.",
+      "Restrict omnibox autocomplete results to a combination of search suggestions (if enabled), bookmarks, and internal chrome pages. croma flag.",
       kOsAll, MULTI_VALUE_TYPE(kOmniboxAutocompleteFiltering)},
 +    {"close-window-with-last-tab",
 +     "Close window with last tab",
-+     "Determines whether a window should close once the last tab is closed. ungoogled-chromium flag.",
++     "Determines whether a window should close once the last tab is closed. croma flag.",
 +     kOsDesktop, MULTI_VALUE_TYPE(kCloseWindowWithLastTab)},
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
+ #endif  // CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_

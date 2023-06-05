@@ -91,12 +91,12 @@
    // No allowed install sites specified, disallow by default.
    if (!global_settings_->install_sources.has_value())
      return false;
---- a/chrome/browser/ungoogled_flag_choices.h
-+++ b/chrome/browser/ungoogled_flag_choices.h
+--- a/chrome/browser/croma_flag_choices.h
++++ b/chrome/browser/croma_flag_choices.h
 @@ -4,4 +4,13 @@
  
- #ifndef CHROME_BROWSER_UNGOOGLED_FLAG_CHOICES_H_
- #define CHROME_BROWSER_UNGOOGLED_FLAG_CHOICES_H_
+ #ifndef CHROME_BROWSER_CROMA_FLAG_CHOICES_H_
+ #define CHROME_BROWSER_CROMA_FLAG_CHOICES_H_
 +const FeatureEntry::Choice kExtensionHandlingChoices[] = {
 +    {flags_ui::kGenericExperimentChoiceDefault, "", ""},
 +    {"Download as regular file",
@@ -106,15 +106,15 @@
 +     "extension-mime-request-handling",
 +     "always-prompt-for-install"},
 +};
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_CHOICES_H_
---- a/chrome/browser/ungoogled_flag_entries.h
-+++ b/chrome/browser/ungoogled_flag_entries.h
+ #endif  // CHROME_BROWSER_CROMA_FLAG_CHOICES_H_
+--- a/chrome/browser/croma_flag_entries.h
++++ b/chrome/browser/croma_flag_entries.h
 @@ -8,4 +8,8 @@
       "SetIpv6ProbeFalse",
-      "Forces the result of the browser's IPv6 probing (i.e. IPv6 connectivity test) to be unsuccessful. This causes IPv4 addresses to be prioritized over IPv6 addresses. Without this flag, the probing result is set to be successful, which causes IPv6 to be used over IPv4 when possible. ungoogled-chromium flag.",
+      "Forces the result of the browser's IPv6 probing (i.e. IPv6 connectivity test) to be unsuccessful. This causes IPv4 addresses to be prioritized over IPv6 addresses. Without this flag, the probing result is set to be successful, which causes IPv6 to be used over IPv4 when possible. croma flag.",
       kOsAll, FEATURE_VALUE_TYPE(net::features::kSetIpv6ProbeFalse)},
 +    {"extension-mime-request-handling",
 +     "Handling of extension MIME type requests",
-+     "Used when deciding how to handle a request for a CRX or User Script MIME type. ungoogled-chromium flag.",
++     "Used when deciding how to handle a request for a CRX or User Script MIME type. croma flag.",
 +     kOsAll, MULTI_VALUE_TYPE(kExtensionHandlingChoices)},
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
+ #endif  // CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_

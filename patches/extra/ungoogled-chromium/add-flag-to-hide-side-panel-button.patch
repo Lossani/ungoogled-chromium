@@ -10,14 +10,14 @@
      if (base::FeatureList::IsEnabled(
              companion::features::kSidePanelCompanion)) {
        side_panel_toolbar_container =
---- a/chrome/browser/ungoogled_flag_entries.h
-+++ b/chrome/browser/ungoogled_flag_entries.h
+--- a/chrome/browser/croma_flag_entries.h
++++ b/chrome/browser/croma_flag_entries.h
 @@ -100,4 +100,8 @@
       "Disable Sharing Hub",
-      "Disables the sharing hub button. ungoogled-chromium flag.",
+      "Disables the sharing hub button. croma flag.",
       kOsDesktop, SINGLE_VALUE_TYPE("disable-sharing-hub")},
 +    {"hide-sidepanel-button",
 +     "Hide SidePanel Button",
-+     "Hides the SidePanel Button. ungoogled-chromium flag.",
++     "Hides the SidePanel Button. croma flag.",
 +     kOsDesktop, SINGLE_VALUE_TYPE("hide-sidepanel-button")},
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
+ #endif  // CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_

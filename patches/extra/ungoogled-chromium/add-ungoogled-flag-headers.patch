@@ -4,20 +4,20 @@
  // calculate and verify checksum.
  //
  // When adding a new choice, add it to the end of the list.
-+#include "chrome/browser/ungoogled_flag_choices.h"
++#include "chrome/browser/croma_flag_choices.h"
 +#include "chrome/browser/bromite_flag_choices.h"
-+#include "chrome/browser/ungoogled_platform_flag_choices.h"
++#include "chrome/browser/croma_platform_flag_choices.h"
  const FeatureEntry kFeatureEntries[] = {
-+#include "chrome/browser/ungoogled_flag_entries.h"
++#include "chrome/browser/croma_flag_entries.h"
 +#include "chrome/browser/bromite_flag_entries.h"
-+#include "chrome/browser/ungoogled_platform_flag_entries.h"
++#include "chrome/browser/croma_platform_flag_entries.h"
  // Include generated flags for flag unexpiry; see //docs/flag_expiry.md and
  // //tools/flags/generate_unexpire_flags.py.
  #include "build/chromeos_buildflags.h"
 --- /dev/null
 +++ b/chrome/browser/bromite_flag_choices.h
 @@ -0,0 +1,7 @@
-+// Copyright (c) 2020 The ungoogled-chromium Authors. All rights reserved.
++// Copyright (c) 2020 The croma Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -27,7 +27,7 @@
 --- /dev/null
 +++ b/chrome/browser/bromite_flag_entries.h
 @@ -0,0 +1,7 @@
-+// Copyright (c) 2020 The ungoogled-chromium Authors. All rights reserved.
++// Copyright (c) 2020 The croma Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -35,42 +35,42 @@
 +#define CHROME_BROWSER_BROMITE_FLAG_ENTRIES_H_
 +#endif  // CHROME_BROWSER_BROMITE_FLAG_ENTRIES_H_
 --- /dev/null
-+++ b/chrome/browser/ungoogled_flag_choices.h
++++ b/chrome/browser/croma_flag_choices.h
 @@ -0,0 +1,7 @@
-+// Copyright (c) 2020 The ungoogled-chromium Authors. All rights reserved.
++// Copyright (c) 2020 The croma Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
-+#ifndef CHROME_BROWSER_UNGOOGLED_FLAG_CHOICES_H_
-+#define CHROME_BROWSER_UNGOOGLED_FLAG_CHOICES_H_
-+#endif  // CHROME_BROWSER_UNGOOGLED_FLAG_CHOICES_H_
++#ifndef CHROME_BROWSER_CROMA_FLAG_CHOICES_H_
++#define CHROME_BROWSER_CROMA_FLAG_CHOICES_H_
++#endif  // CHROME_BROWSER_CROMA_FLAG_CHOICES_H_
 --- /dev/null
-+++ b/chrome/browser/ungoogled_flag_entries.h
++++ b/chrome/browser/croma_flag_entries.h
 @@ -0,0 +1,7 @@
-+// Copyright (c) 2020 The ungoogled-chromium Authors. All rights reserved.
++// Copyright (c) 2020 The croma Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
-+#ifndef CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
-+#define CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
-+#endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
++#ifndef CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_
++#define CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_
++#endif  // CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_
 --- /dev/null
-+++ b/chrome/browser/ungoogled_platform_flag_choices.h
++++ b/chrome/browser/croma_platform_flag_choices.h
 @@ -0,0 +1,7 @@
-+// Copyright (c) 2020 The ungoogled-chromium Authors. All rights reserved.
++// Copyright (c) 2020 The croma Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
-+#ifndef CHROME_BROWSER_UNGOOGLED_PLATFORM_FLAG_CHOICES_H_
-+#define CHROME_BROWSER_UNGOOGLED_PLATFORM_FLAG_CHOICES_H_
-+#endif  // CHROME_BROWSER_UNGOOGLED_PLATFORM_FLAG_CHOICES_H_
++#ifndef CHROME_BROWSER_CROMA_PLATFORM_FLAG_CHOICES_H_
++#define CHROME_BROWSER_CROMA_PLATFORM_FLAG_CHOICES_H_
++#endif  // CHROME_BROWSER_CROMA_PLATFORM_FLAG_CHOICES_H_
 --- /dev/null
-+++ b/chrome/browser/ungoogled_platform_flag_entries.h
++++ b/chrome/browser/croma_platform_flag_entries.h
 @@ -0,0 +1,7 @@
-+// Copyright (c) 2020 The ungoogled-chromium Authors. All rights reserved.
++// Copyright (c) 2020 The croma Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
-+#ifndef CHROME_BROWSER_UNGOOGLED_PLATFORM_FLAG_ENTRIES_H_
-+#define CHROME_BROWSER_UNGOOGLED_PLATFORM_FLAG_ENTRIES_H_
-+#endif  // CHROME_BROWSER_UNGOOGLED_PLATFORM_FLAG_ENTRIES_H_
++#ifndef CHROME_BROWSER_CROMA_PLATFORM_FLAG_ENTRIES_H_
++#define CHROME_BROWSER_CROMA_PLATFORM_FLAG_ENTRIES_H_
++#endif  // CHROME_BROWSER_CROMA_PLATFORM_FLAG_ENTRIES_H_

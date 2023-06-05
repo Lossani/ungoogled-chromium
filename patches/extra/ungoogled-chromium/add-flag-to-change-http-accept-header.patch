@@ -1,14 +1,14 @@
---- a/chrome/browser/ungoogled_flag_entries.h
-+++ b/chrome/browser/ungoogled_flag_entries.h
+--- a/chrome/browser/croma_flag_entries.h
++++ b/chrome/browser/croma_flag_entries.h
 @@ -92,4 +92,8 @@
       "Disable GREASE for TLS",
-      "Turn off GREASE (Generate Random Extensions And Sustain Extensibility) for TLS connections. ungoogled-chromium flag.",
+      "Turn off GREASE (Generate Random Extensions And Sustain Extensibility) for TLS connections. croma flag.",
       kOsAll, SINGLE_VALUE_TYPE("disable-grease-tls")},
 +    {"http-accept-header",
 +     "Custom HTTP Accept Header",
-+     "Set a custom value for the Accept header which is sent by the browser with every HTTP request.  (e.g. `text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8`). ungoogled-chromium flag.",
++     "Set a custom value for the Accept header which is sent by the browser with every HTTP request.  (e.g. `text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8`). croma flag.",
 +     kOsAll, ORIGIN_LIST_VALUE_TYPE("http-accept-header", "")},
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
+ #endif  // CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_
 --- a/components/flags_ui/flags_state.cc
 +++ b/components/flags_ui/flags_state.cc
 @@ -222,6 +222,7 @@ std::string GetCombinedOriginListValue(c

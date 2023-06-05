@@ -22,8 +22,8 @@
  }
  
  void BookmarkTabHelper::AddObserver(BookmarkTabHelperObserver* observer) {
---- a/chrome/browser/ungoogled_flag_choices.h
-+++ b/chrome/browser/ungoogled_flag_choices.h
+--- a/chrome/browser/croma_flag_choices.h
++++ b/chrome/browser/croma_flag_choices.h
 @@ -34,4 +34,10 @@ const FeatureEntry::Choice kScrollEventC
       "scroll-tabs",
       "never"}
@@ -34,15 +34,15 @@
 +     "bookmark-bar-ntp",
 +     "never"},
 +};
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_CHOICES_H_
---- a/chrome/browser/ungoogled_flag_entries.h
-+++ b/chrome/browser/ungoogled_flag_entries.h
+ #endif  // CHROME_BROWSER_CROMA_FLAG_CHOICES_H_
+--- a/chrome/browser/croma_flag_entries.h
++++ b/chrome/browser/croma_flag_entries.h
 @@ -36,4 +36,8 @@
       "Scroll switches tab",
-      "Switch to the left/right tab if the wheel-scroll happens over the tabstrip, or the empty space beside the tabstrip. ungoogled-chromium flag.",
+      "Switch to the left/right tab if the wheel-scroll happens over the tabstrip, or the empty space beside the tabstrip. croma flag.",
       kOsDesktop, MULTI_VALUE_TYPE(kScrollEventChangesTab)},
 +    {"bookmark-bar-ntp",
 +     "Bookmark Bar on New-Tab-Page",
-+     "Disable the Bookmark Bar on the New-Tab-Page. ungoogled-chromium flag.",
++     "Disable the Bookmark Bar on the New-Tab-Page. croma flag.",
 +     kOsDesktop, MULTI_VALUE_TYPE(kBookmarkBarNewTab)},
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
+ #endif  // CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_

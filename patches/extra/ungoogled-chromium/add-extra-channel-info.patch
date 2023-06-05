@@ -1,4 +1,4 @@
-description: change extra channel info to "Ungoogled Chromium"
+description: change extra channel info to "Croma Chromium"
 author: Wengling Chen <feiyu2817@gmail.com>
 
 ---
@@ -12,11 +12,11 @@ author: Wengling Chen <feiyu2817@gmail.com>
    </message>
    <message name="IDS_VERSION_UI_OFFICIAL" desc="official build on the about:version page">
 -    Official Build
-+    Official Build, ungoogled-chromium
++    Official Build, croma
    </message>
    <message name="IDS_VERSION_UI_UNOFFICIAL" desc="unofficial build on the about:version page">
 -    Developer Build
-+    Developer Build, ungoogled-chromium
++    Developer Build, croma
    </message>
    <message name="IDS_VERSION_UI_32BIT" desc="32-bit on the chrome://version page">
      (32-bit)

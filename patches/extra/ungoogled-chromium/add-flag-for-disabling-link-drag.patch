@@ -1,14 +1,14 @@
---- a/chrome/browser/ungoogled_flag_entries.h
-+++ b/chrome/browser/ungoogled_flag_entries.h
+--- a/chrome/browser/croma_flag_entries.h
++++ b/chrome/browser/croma_flag_entries.h
 @@ -104,4 +104,8 @@
       "Hide SidePanel Button",
-      "Hides the SidePanel Button. ungoogled-chromium flag.",
+      "Hides the SidePanel Button. croma flag.",
       kOsDesktop, SINGLE_VALUE_TYPE("hide-sidepanel-button")},
 +    {"disable-link-drag",
 +     "Disable link drag",
-+     "Prevents dragging of links and selected text. ungoogled-chromium flag.",
++     "Prevents dragging of links and selected text. croma flag.",
 +     kOsDesktop, FEATURE_VALUE_TYPE(blink::features::kDisableLinkDrag)},
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
+ #endif  // CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_
 --- a/third_party/blink/common/features.cc
 +++ b/third_party/blink/common/features.cc
 @@ -40,6 +40,8 @@ BASE_FEATURE(kAutofillSendUnidentifiedKe

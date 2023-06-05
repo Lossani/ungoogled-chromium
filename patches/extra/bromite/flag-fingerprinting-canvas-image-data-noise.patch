@@ -2,7 +2,7 @@
 # * Added flag --fingerprinting-canvas-image-data-noise to enable/disable
 #   Canvas image data fingerprinting deception
 # * Removed WebGLDebugRendererInfo disabling in favor of an alternative
-#   implementation in ungoogled-chromium/disable-webgl-renderer-info.patch
+#   implementation in croma/disable-webgl-renderer-info.patch
 # * Tweak subchannel noise generation to require fewer random number generation
 From: csagan5 <32685696+csagan5@users.noreply.github.com>
 Date: Sat, 24 Mar 2018 05:18:03 +0100
@@ -29,7 +29,7 @@ approach to change color components.
       kOsAll, MULTI_VALUE_TYPE(kMaxConnectionsPerHostChoices)},
 +    {"fingerprinting-canvas-image-data-noise",
 +     "Enable Canvas image data fingerprint deception",
-+     "Slightly modifies at most 10 pixels in Canvas image data extracted via JS APIs. ungoogled-chromium flag, Bromite feature.",
++     "Slightly modifies at most 10 pixels in Canvas image data extracted via JS APIs. croma flag, Bromite feature.",
 +     kOsAll, SINGLE_VALUE_TYPE(switches::kFingerprintingCanvasImageDataNoise)},
  #endif  // CHROME_BROWSER_BROMITE_FLAG_ENTRIES_H_
 --- a/content/browser/renderer_host/render_process_host_impl.cc

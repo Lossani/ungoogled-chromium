@@ -156,8 +156,8 @@
    /////////////////////////////////////////////////////////////////////////////
  
    // Override values for the bounds of the window and its maximized or minimized
---- a/chrome/browser/ungoogled_flag_choices.h
-+++ b/chrome/browser/ungoogled_flag_choices.h
+--- a/chrome/browser/croma_flag_choices.h
++++ b/chrome/browser/croma_flag_choices.h
 @@ -61,4 +61,13 @@ const FeatureEntry::Choice kCloseWindowW
       "close-window-with-last-tab",
       "never"},
@@ -171,15 +171,15 @@
 +     "close-confirmation",
 +     "multiple"},
 +};
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_CHOICES_H_
---- a/chrome/browser/ungoogled_flag_entries.h
-+++ b/chrome/browser/ungoogled_flag_entries.h
+ #endif  // CHROME_BROWSER_CROMA_FLAG_CHOICES_H_
+--- a/chrome/browser/croma_flag_entries.h
++++ b/chrome/browser/croma_flag_entries.h
 @@ -72,4 +72,8 @@
       "Remove Grab Handle",
-      "Removes the reserved empty space in the tabstrip for moving the window. ungoogled-chromium flag",
+      "Removes the reserved empty space in the tabstrip for moving the window. croma flag",
       kOsDesktop, SINGLE_VALUE_TYPE("remove-grab-handle")},
 +    {"close-confirmation",
 +     "Close Confirmation",
-+     "Show a warning prompt when closing the browser window. ungoogled-chromium flag",
++     "Show a warning prompt when closing the browser window. croma flag",
 +     kOsDesktop, MULTI_VALUE_TYPE(kCloseConfirmation)},
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
+ #endif  // CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_

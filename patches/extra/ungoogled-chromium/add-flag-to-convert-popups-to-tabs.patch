@@ -1,16 +1,16 @@
 # Make popups go to tabs instead
 
---- a/chrome/browser/ungoogled_flag_entries.h
-+++ b/chrome/browser/ungoogled_flag_entries.h
+--- a/chrome/browser/croma_flag_entries.h
++++ b/chrome/browser/croma_flag_entries.h
 @@ -48,4 +48,8 @@
       "Close window with last tab",
-      "Determines whether a window should close once the last tab is closed. ungoogled-chromium flag.",
+      "Determines whether a window should close once the last tab is closed. croma flag.",
       kOsDesktop, MULTI_VALUE_TYPE(kCloseWindowWithLastTab)},
 +    {"popups-to-tabs",
 +     "Popups to tabs",
-+     "Makes popups open in new tabs. ungoogled-chromium flag",
++     "Makes popups open in new tabs. croma flag",
 +     kOsAll, SINGLE_VALUE_TYPE("popups-to-tabs")},
- #endif  // CHROME_BROWSER_UNGOOGLED_FLAG_ENTRIES_H_
+ #endif  // CHROME_BROWSER_CROMA_FLAG_ENTRIES_H_
 --- a/content/renderer/render_frame_impl.cc
 +++ b/content/renderer/render_frame_impl.cc
 @@ -1171,6 +1171,8 @@ WindowOpenDisposition NavigationPolicyTo
