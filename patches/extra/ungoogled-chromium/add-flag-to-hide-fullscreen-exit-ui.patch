@@ -1,6 +1,6 @@
 --- a/chrome/browser/ui/views/frame/browser_view.cc
 +++ b/chrome/browser/ui/views/frame/browser_view.cc
-@@ -1738,6 +1738,10 @@ void BrowserView::UpdateExclusiveAccessE
+@@ -1741,6 +1741,10 @@ void BrowserView::UpdateExclusiveAccessE
      ExclusiveAccessBubbleHideCallback bubble_first_hide_callback,
      bool notify_download,
      bool force_update) {
@@ -26,7 +26,7 @@
    return !chrome::IsRunningInAppMode();
 --- a/chrome/browser/ungoogled_flag_entries.h
 +++ b/chrome/browser/ungoogled_flag_entries.h
-@@ -116,4 +116,8 @@
+@@ -112,4 +112,8 @@
       "Hide Extensions Menu",
       "Hides the extensions container. This includes the puzzle piece icon as well as any pinned extensions. ungoogled-chromium flag.",
       kOsDesktop, SINGLE_VALUE_TYPE("hide-extensions-menu")},
