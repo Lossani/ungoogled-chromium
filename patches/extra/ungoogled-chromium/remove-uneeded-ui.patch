@@ -117,23 +117,22 @@
            hidden="[[!prefs.feedback_allowed.value]]"
 --- a/chrome/browser/resources/settings/appearance_page/appearance_page.html
 +++ b/chrome/browser/resources/settings/appearance_page/appearance_page.html
-@@ -22,12 +22,11 @@
-     <settings-animated-pages id="pages" section="appearance"
-         focus-config="[[focusConfig_]]">
-       <div route-path="default">
--        <div class="settings-row first" id="themeRow"
+@@ -22,11 +22,11 @@
+   <settings-animated-pages id="pages" section="appearance"
+       focus-config="[[focusConfig_]]">
+     <div route-path="default">
+-      <div class="settings-row first" id="themeRow"
 +        <div class="cr-row first" id="themeRow"
-             hidden="[[!pageVisibility.setTheme]]">
--          <cr-link-row class="first" hidden="[[!pageVisibility.setTheme]]"
--              label="$i18n{themes}" sub-label="[[themeSublabel_]]"
--              button-aria-description="$i18n{opensInNewTab}"
--              on-click="openThemeUrl_" external></cr-link-row>
+           hidden="[[!pageVisibility.setTheme]]">
+-        <cr-link-row class="first" hidden="[[!pageVisibility.setTheme]]"
+-            label="$i18n{themes}" sub-label="[[themeSublabel_]]"
+-            on-click="openThemeUrl_" external></cr-link-row>
 +          <div class="flex cr-padded-text">
 +            <div>$i18n{themes}</div><div class="secondary">[[themeSublabel_]]</div>
 +          </div>
  <if expr="not is_linux">
-           <template is="dom-if" if="[[prefs.extensions.theme.id.value]]">
-             <div class="separator"></div>
+         <template is="dom-if" if="[[prefs.extensions.theme.id.value]]">
+           <div class="separator"></div>
 --- a/chrome/browser/resources/settings/appearance_page/appearance_page.ts
 +++ b/chrome/browser/resources/settings/appearance_page/appearance_page.ts
 @@ -353,8 +353,8 @@ export class SettingsAppearancePageEleme
@@ -256,18 +255,22 @@
                start-icon="settings:cookie"
 --- a/chrome/browser/resources/settings/privacy_page/security_page.html
 +++ b/chrome/browser/resources/settings/privacy_page/security_page.html
-@@ -141,10 +141,3 @@
-     </template>
- </if>
- 
--    <cr-link-row id="advanced-protection-program-link"
--        class="hr"
--        label="$i18n{advancedProtectionProgramTitle}"
--        sub-label="$i18n{advancedProtectionProgramDesc}"
--        on-click="onAdvancedProtectionProgramLinkClick_"
--        button-aria-description="$i18n{opensInNewTab}"
--        external>
--    </cr-link-row>
+@@ -139,12 +139,4 @@
+         sub-label="$i18n{chromeCertificatesDescription}"
+         on-click="onChromeCertificatesClick_"></cr-link-row>
+   </template>
+-</if>
+-
+-  <cr-link-row id="advanced-protection-program-link"
+-      class="hr"
+-      label="$i18n{advancedProtectionProgramTitle}"
+-      sub-label="$i18n{advancedProtectionProgramDesc}"
+-      on-click="onAdvancedProtectionProgramLinkClick_"
+-      external>
+-  </cr-link-row>
+\ No newline at end of file
++</if>
+\ No newline at end of file
 --- a/chrome/browser/resources/settings/search_page/search_page.html
 +++ b/chrome/browser/resources/settings/search_page/search_page.html
 @@ -12,11 +12,6 @@

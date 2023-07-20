@@ -954,9 +954,6 @@
 -  { key::kSafeBrowsingEnabled,
 -    prefs::kSafeBrowsingEnabled,
 -    base::Value::Type::BOOLEAN },
--  { key::kClientSidePhishingProtectionAllowed,
--    prefs::kSafeBrowsingCsdPhishingProtectionAllowedByPolicy,
--    base::Value::Type::BOOLEAN },
    { key::kSavingBrowserHistoryDisabled,
      prefs::kSavingBrowserHistoryDisabled,
      base::Value::Type::BOOLEAN },
@@ -2593,7 +2590,7 @@
  
 --- a/chrome/browser/ssl/ssl_browsertest.cc
 +++ b/chrome/browser/ssl/ssl_browsertest.cc
-@@ -92,7 +92,6 @@
+@@ -93,7 +93,6 @@
  #include "components/policy/policy_constants.h"
  #include "components/prefs/testing_pref_service.h"
  #include "components/safe_browsing/core/common/features.h"
