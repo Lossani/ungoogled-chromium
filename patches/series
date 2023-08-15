@@ -1,4 +1,3 @@
-#upstream/Fix-autocomplete-controller-build-with-tflite-lib-disabled.patch
 upstream/fix-print-content-analysis.patch
 
 core/inox-patchset/0001-fix-building-without-safebrowsing.patch
@@ -103,6 +102,6 @@ extra/ungoogled-chromium/prepopulated-search-engines.patch
 # extra/ungoogled-chromium/add-flag-to-hide-fullscreen-exit-ui.patch
 # extra/ungoogled-chromium/add-flag-for-incognito-themes.patch
 # extra/ungoogled-chromium/add-flags-for-referrer-customization.patch
-extra/ungoogled-chromium/default-webrtc-ip-handling-policy.patch
-extra/ungoogled-chromium/add-flags-for-existing-switches.patch
-extra/ungoogled-chromium/first-run-page.patch
+# extra/ungoogled-chromium/default-webrtc-ip-handling-policy.patch
+# extra/ungoogled-chromium/add-flags-for-existing-switches.patch
+# extra/ungoogled-chromium/first-run-page.patch
