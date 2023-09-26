@@ -8,14 +8,9 @@ core/iridium-browser/safe_browsing-disable-incident-reporting.patch
 core/iridium-browser/safe_browsing-disable-reporting-of-safebrowsing-over.patch
 #core/iridium-browser/all-add-trk-prefixes-to-possibly-evil-connections.patch
 core/ungoogled-chromium/disable-crash-reporter.patch
-<<<<<<< HEAD
 #core/ungoogled-chromium/disable-google-host-detection.patch
 #core/ungoogled-chromium/replace-google-search-engine-with-nosearch.patch
-core/ungoogled-chromium/disable-signin.patch
-=======
-core/ungoogled-chromium/disable-google-host-detection.patch
-core/ungoogled-chromium/replace-google-search-engine-with-nosearch.patch
->>>>>>> 1951a830f78307537b7c3d97b537e174799e5f11
+#core/ungoogled-chromium/disable-signin.patch
 core/ungoogled-chromium/toggle-translation-via-switch.patch
 #core/ungoogled-chromium/disable-untraceable-urls.patch
 core/ungoogled-chromium/disable-profile-avatar-downloading.patch
@@ -32,16 +27,7 @@ core/ungoogled-chromium/disable-network-time-tracker.patch
 core/ungoogled-chromium/disable-mei-preload.patch
 core/ungoogled-chromium/fix-building-without-safebrowsing.patch
 core/ungoogled-chromium/remove-unused-preferences-fields.patch
-<<<<<<< HEAD
-#core/ungoogled-chromium/block-requests.patch
-#core/ungoogled-chromium/disable-privacy-sandbox.patch
-#core/ungoogled-chromium/doh-changes.patch
-=======
-core/ungoogled-chromium/block-requests.patch
-core/ungoogled-chromium/disable-privacy-sandbox.patch
-core/ungoogled-chromium/doh-changes.patch
 core/ungoogled-chromium/disable-web-environment-integrity.patch
->>>>>>> 1951a830f78307537b7c3d97b537e174799e5f11
 core/bromite/disable-fetching-field-trials.patch
 
 extra/ungoogled-chromium/add-ungoogled-flag-headers.patch
