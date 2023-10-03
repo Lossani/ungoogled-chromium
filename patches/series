@@ -1,11 +1,11 @@
-core/inox-patchset/0001-fix-building-without-safebrowsing.patch
+# core/inox-patchset/0001-fix-building-without-safebrowsing.patch
 #core/inox-patchset/0003-disable-autofill-download-manager.patch
 #core/inox-patchset/0005-disable-default-extensions.patch
 core/inox-patchset/0009-disable-google-ipv6-probes.patch
 core/inox-patchset/0015-disable-update-pings.patch
 core/inox-patchset/0021-disable-rlz.patch
 core/iridium-browser/safe_browsing-disable-incident-reporting.patch
-core/iridium-browser/safe_browsing-disable-reporting-of-safebrowsing-over.patch
+# core/iridium-browser/safe_browsing-disable-reporting-of-safebrowsing-over.patch
 #core/iridium-browser/all-add-trk-prefixes-to-possibly-evil-connections.patch
 core/ungoogled-chromium/disable-crash-reporter.patch
 #core/ungoogled-chromium/disable-google-host-detection.patch
@@ -13,22 +13,22 @@ core/ungoogled-chromium/disable-crash-reporter.patch
 #core/ungoogled-chromium/disable-signin.patch
 core/ungoogled-chromium/toggle-translation-via-switch.patch
 #core/ungoogled-chromium/disable-untraceable-urls.patch
-core/ungoogled-chromium/disable-profile-avatar-downloading.patch
-core/ungoogled-chromium/disable-gcm.patch
+# core/ungoogled-chromium/disable-profile-avatar-downloading.patch
+# core/ungoogled-chromium/disable-gcm.patch
 core/ungoogled-chromium/disable-domain-reliability.patch
 #core/ungoogled-chromium/block-trk-and-subdomains.patch
-core/ungoogled-chromium/disable-gaia.patch
+# core/ungoogled-chromium/disable-gaia.patch
 #core/ungoogled-chromium/disable-fonts-googleapis-references.patch
 #core/ungoogled-chromium/disable-webstore-urls.patch
 core/ungoogled-chromium/fix-learn-doubleclick-hsts.patch
 core/ungoogled-chromium/disable-webrtc-log-uploader.patch
-core/ungoogled-chromium/fix-building-with-prunned-binaries.patch
+# core/ungoogled-chromium/fix-building-with-prunned-binaries.patch
 core/ungoogled-chromium/disable-network-time-tracker.patch
-core/ungoogled-chromium/disable-mei-preload.patch
-core/ungoogled-chromium/fix-building-without-safebrowsing.patch
-core/ungoogled-chromium/remove-unused-preferences-fields.patch
+# core/ungoogled-chromium/disable-mei-preload.patch
+# core/ungoogled-chromium/fix-building-without-safebrowsing.patch
+# core/ungoogled-chromium/remove-unused-preferences-fields.patch
 core/ungoogled-chromium/disable-web-environment-integrity.patch
-core/bromite/disable-fetching-field-trials.patch
+# core/bromite/disable-fetching-field-trials.patch
 
 extra/ungoogled-chromium/add-ungoogled-flag-headers.patch
 #extra/inox-patchset/0006-modify-default-prefs.patch
@@ -71,7 +71,7 @@ extra/ungoogled-chromium/enable-default-prefetch-privacy-changes.patch
 extra/ungoogled-chromium/enable-menu-on-reload-button.patch
 # extra/ungoogled-chromium/add-flag-for-omnibox-autocomplete-filtering.patch
 # extra/ungoogled-chromium/disable-dial-repeating-discovery.patch
-extra/ungoogled-chromium/remove-uneeded-ui.patch
+# extra/ungoogled-chromium/remove-uneeded-ui.patch
 # extra/ungoogled-chromium/add-flag-to-close-window-with-last-tab.patch
 # extra/ungoogled-chromium/add-flag-to-convert-popups-to-tabs.patch
 # extra/ungoogled-chromium/add-flag-to-disable-local-history-expiration.patch
@@ -101,4 +101,4 @@ extra/ungoogled-chromium/prepopulated-search-engines.patch
 # extra/ungoogled-chromium/default-webrtc-ip-handling-policy.patch
 # extra/ungoogled-chromium/add-flags-for-existing-switches.patch
 # extra/ungoogled-chromium/first-run-page.patch
-extra/ungoogled-chromium/disable-capture-all-screens.patch
+# extra/ungoogled-chromium/disable-capture-all-screens.patch
